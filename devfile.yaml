@@ -22,13 +22,6 @@ components:
       memoryLimit: 2Gi
       mountSources: true
 commands:
-  - id: stop
-    exec:
-      label: "1.2 Stop outyet"
-      component: go-cli
-      commandLine: "kill $(pidof go)"
-      group:
-        kind: run
   - id: dependencies
     exec:
       label: "2.1 xenisa :: install dependencies"
@@ -67,5 +60,12 @@ commands:
       component: go-cli
       workingDir: ${fileDirname}
       commandLine: "go get -d && go run ${file}"
+      group:
+        kind: run
+  - id: stop
+    exec:
+      label: "Stop all commands"
+      component: go-cli
+      commandLine: "kill $(pidof go)"
       group:
         kind: run
