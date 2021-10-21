@@ -6,8 +6,8 @@ attributes:
 components:
   - name: go-cli
     container:
-      # for testing, DO NOT MERGE
-      image: quay.io/ivinokur/go:next
+      # this version is used in the plugin
+      image: quay.io/devfile/universal-developer-image:ubi8-b452131
       env:
         - name: GOPATH
           # replicate the GOPATH from the plugin
